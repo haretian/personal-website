@@ -9,23 +9,68 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="format-detection" content="telephone=no">
         <meta name=author content="Matthew Li">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+        
         <Title>M</Title>
     </head>
 
     <body>
-        <div class="page" id="landing">
-            <div class="border-outside fake" style="z-index: 1;">
-                <div class="border-inside">
-                    <canvas></canvas>
-                    <script src="JS/border.js"></script>
+        <div class="main-page">
+            <div class="border-wrapper uninteractible">
+                <div class="border-outside fake" style="z-index: 1;">
+                    <div class="border-inside border">
+                        <canvas></canvas>
+                    </div>
                 </div>
+                    
+                <div class="border-outside" style="z-index: 0;"></div>
             </div>
 
-            <div class="border-outside" style="z-index: 0;"></div>
+            <img class="hero-img parallax-red ininteractible" src="img/red.png">
+            <img class="hero-img parallax-blue ininteractible" src="img/blue.png">
+            <img class="hero-img parallax-green ininteractible" src="img/green.png">
+            <div class="border-bottom"></div>
 
-            <div class="main-wrapper">
+            <img class="cat-gif gif uninteractible" src="img/cato.gif">
+            <img class="squat-gif gif uninteractible" src="img/squatting.gif">
+            <div class="title-text uninteractible">test text</div>
+
+            <div class="popup-page-wrapper">
+                <div class="popup-wrapper border-wrapper">
+                    <div class="popup border uninteractible">
+                        <canvas></canvas>
+                    </div>
+                    <div class="popup-tab">
+                        <div class="popup-close">
+                            <img src="img/close.gif">
+                        </div>
+                    </div>
+                    <div class="popup-content uninteractible">hello</div>
+                </div>
+
+                <div class="popup-wrapper border-wrapper" style="left: 25%;">
+                    <div class="popup border uninteractible">
+                        <canvas></canvas>
+                    </div>
+                    <div class="popup-tab">
+                        <div class="popup-close">
+                            <img src="img/close.gif">
+                        </div>
+                    </div>
+                    <div class="popup-content">yahallo</div>
+                </div>
 
             </div>
+
+            <div class="page"></div>
+            <div class="page portfolio"></div>
         </div>
+
+        <script src="JS/main.js"></script>
+        
+        <script src="JS/popup.js"></script>
     </body>
 </html>

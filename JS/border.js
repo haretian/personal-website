@@ -13,7 +13,7 @@ class post {
     }
 
     resizeCanvas() {
-        let innerElement = this.domElement.querySelector(".border-inside"); // the container the canvas is in already is the same size as the computed size of the post with padding
+        let innerElement = this.domElement.querySelector(".border"); // the container the canvas is in already is the same size as the computed size of the post with padding
         this.borderWidth = innerElement.offsetWidth;
         this.borderHeight = innerElement.offsetHeight;   
 
@@ -28,7 +28,7 @@ class post {
     }
 }
 
-document.querySelectorAll(".border-outside").forEach(el => {
+document.querySelectorAll(".border-wrapper").forEach(el => {
     posts.push(new post(el))
 })
 
@@ -42,12 +42,12 @@ function drawBorders(post) {
     const maxXOffset = 15;
     const minXOffset = 30;
 
-    const yOffset = 7;
+    const yOffset = 2;
 
     const context = post.canvas.getContext("2d");
 
     // function to draw a line
-    function drawStroke(ctx, x1, y1, x2, y2, color = "black") {
+    function drawStroke(ctx, x1, y1, x2, y2, color = "white") {
         ctx.beginPath();
 
         // place the cursor from the point the line should be started 
@@ -60,7 +60,7 @@ function drawBorders(post) {
         ctx.strokeStyle = color;
 
         // set lineWidth
-        ctx.lineWidth = 10;
+        ctx.lineWidth = 3;
 
         // set lineCap
         ctx.lineCap = "round";
@@ -71,7 +71,7 @@ function drawBorders(post) {
 
 
     // func for top bottom
-    function drawLine(ctx, startX, startY, length, horizontal = true) {
+    function drawLine(ctx, startX, startY, length, horizontal = true, first = false) {
         let cursorX = (horizontal ? startX : startY);
         let cursorY = horizontal ? startY : startX;
 
@@ -94,6 +94,7 @@ function drawBorders(post) {
 
             lastX = lastX + xOffset;
             lastY = cursorY + randYOffset;
+
         }
         
         if(horizontal) {
@@ -111,7 +112,10 @@ function drawBorders(post) {
     drawLine(context, buffer , bufferedHeight, bufferedWidth)
     drawLine(context, buffer , buffer, bufferedHeight, false)
     drawLine(context, bufferedWidth , buffer, bufferedHeight, false)
-
+    console.log(post.domElement.id)
+    if(post.domElement.matches(".popup-wrapper")) {
+        drawLine(context, buffer, 43, bufferedWidth)
+    }
 }
 
 
@@ -126,5 +130,5 @@ window.onload = async () => {
             post.resizeCanvas()
             drawBorders(post)
         })
-    }, 500) // for some reason this is the only way I could find to get the offsetHeight property to be accurate
+    }, 200) // for some reason this is the only way I could find to get the offsetHeight property to be accurate
 }
