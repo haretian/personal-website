@@ -1,21 +1,19 @@
 let x;
 let y;
 
+// Allow popup animation
+document.querySelectorAll(".popup-wrapper").forEach(el => {
+    el.classList.remove("hidden");
+    setTimeout(function(){
+        el.style.transition = "scale 300ms cubic-bezier(0,-0.1,.41,-0.28)";
+    }, 300);
+})
+
 // Add listener to each div
-//document.querySelectorAll(".popup-tab").forEach(el => {
-//    el.addEventListener("mousedown", mdown, false);
-//    el.addEventListener("touchstart", mdown, false);
-//})
-
-var elements = document.getElementsByClassName("popup-tab");
-
-//要素内のクリックされた位置を取得するグローバル（のような）変数
-
-//マウスが要素内で押されたとき、又はタッチされたとき発火
-for(var i = 0; i < elements.length; i++) {
-    elements[i].addEventListener("mousedown", mdown, false);
-    elements[i].addEventListener("touchstart", mdown, false);
-}
+document.querySelectorAll(".popup-tab").forEach(el => {
+    el.addEventListener("mousedown", mdown, false);
+    el.addEventListener("touchstart", mdown, false);
+})
 
 function mdown(e) {
 
