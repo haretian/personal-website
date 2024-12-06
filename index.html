@@ -19,7 +19,7 @@
 
     <body>
         <div class="main-page">
-            <div class="border-wrapper uninteractible">
+            <div class="landing-border border-wrapper uninteractible">
                 <div class="border-outside fake" style="z-index: 1;">
                     <div class="border-inside border">
                         <canvas></canvas>
@@ -48,7 +48,15 @@
                             <img src="img/close.gif">
                         </div>
                     </div>
-                    <div class="popup-content uninteractible">hello</div>
+                    <div class="popup-content">
+                        <div class="text">webdev</div>
+                        <div class="popup-ok border-wrapper popup-close">
+                            <div class="text">OK</div>
+                            <div class="popup border uninteractible">
+                                <canvas></canvas>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="popup-wrapper border-wrapper" style="left: 25%;">
@@ -60,7 +68,15 @@
                             <img src="img/close.gif">
                         </div>
                     </div>
-                    <div class="popup-content">yahallo</div>
+                    <div class="popup-content">
+                        <div class="text">photographer</div>
+                        <div class="popup-ok border-wrapper popup-close">
+                            <div class="text">OK</div>
+                            <div class="popup border uninteractible">
+                                <canvas></canvas>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -70,7 +86,7 @@
         </div>
 
         <script src="JS/main.js"></script>
-        
+        <script src="JS/border.js"></script>
         <script src="JS/popup.js"></script>
     </body>
 </html>

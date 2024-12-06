@@ -114,7 +114,7 @@ function drawBorders(post) {
     drawLine(context, bufferedWidth , buffer, bufferedHeight, false)
     console.log(post.domElement.id)
     if(post.domElement.matches(".popup-wrapper")) {
-        drawLine(context, buffer, 43, bufferedWidth)
+        drawLine(context, buffer, 40, bufferedWidth)
     }
 }
 
